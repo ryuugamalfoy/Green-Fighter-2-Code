@@ -262,6 +262,7 @@ void loop() {
     ThingSpeak.setField(5, coPPM);
     ThingSpeak.setField(6, t);
     ThingSpeak.setField(7, h);
+    ThingSpeak.setField(8, data.particles_03um);
 
 
     // Set the status
