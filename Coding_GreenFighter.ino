@@ -52,6 +52,8 @@ int pushButton = 2;
 
 
 void setup() {
+
+  //Serial Print
   Serial.begin(115200);
   while (!Serial)
     delay(10);
@@ -86,6 +88,7 @@ void setup() {
 Serial.begin(115200); // Initialize serial communication
 }
 
+//calibration for PMS5003
 boolean readPMSdata(Stream *s) {
   if (!s->available()) {
     return false;
@@ -124,9 +127,11 @@ boolean readPMSdata(Stream *s) {
 }
 
 void loop() {
-
+  
+  //Display LCD
   static int displayCounter = 0;
 
+  //Read PMS5003
   if (readPMSdata(&pmsSerial)) {
     Serial.println();
     Serial.println("---------------------------------------");
